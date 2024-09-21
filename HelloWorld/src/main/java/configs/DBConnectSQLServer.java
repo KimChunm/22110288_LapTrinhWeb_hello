@@ -3,7 +3,7 @@ package configs;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConnectSLQServer {
+public class DBConnectSQLServer {
 	private final String serverName = "DESKTOP-S9KCI2C\\MSSQLSERVER01";
 
 	 private final String dbName = "LTWEB";
@@ -20,18 +20,14 @@ public class DBConnectSLQServer {
 
 
 	 public Connection getConnection() throws Exception {
+		
+		 		String url = "jdbc:sqlserver://" + serverName + ":" + portNumber + "\\" + instance + ";databaseName=" + dbName;
 
 
-	 String url = "jdbc:sqlserver://" + serverName + ":" + portNumber + "\\" + instance + ";databaseName=" + dbName;
+		 		if (instance == null || instance.trim().isEmpty())
 
-
-	 if (instance == null || instance.trim().isEmpty())
-
-	 url = "jdbc:sqlserver://" + serverName + ";databaseName=" + dbName;
-
-	 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-	 return DriverManager.getConnection(url, userID, password);
-
+		 			url = "jdbc:sqlserver://" + serverName + ";databaseName=" + dbName;
+		 		return DriverManager.getConnection(url);
 	 }
 
 
@@ -45,7 +41,7 @@ public class DBConnectSLQServer {
 	 try {
 
 
-	 System.out.println(new DBConnectSLQServer().getConnection());
+	 System.out.println(new DBConnectSQLServer().getConnection());
 
 
 	 } catch (Exception e) {

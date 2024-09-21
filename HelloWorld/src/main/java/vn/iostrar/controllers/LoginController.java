@@ -1,14 +1,11 @@
 package vn.iostrar.controllers;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-@WebServlet(urlPatterns = {"/login","/dang-nhap"})
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
+
+import java.io.IOException;@WebServlet(urlPatterns = {"/login","/dang-nhap"})
 public class LoginController extends HttpServlet {
 	/**
 	 * 
@@ -43,5 +40,9 @@ public class LoginController extends HttpServlet {
 		rd.forward(req, resp);
 		
 	}
+	  public class Constant {
+	        public static final String COOKIE_REMEMBER = "username";
+	        public static final String SESSION_USERNAME = "username";
+	    }
 
 }
