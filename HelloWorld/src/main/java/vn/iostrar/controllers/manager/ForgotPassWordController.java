@@ -1,15 +1,15 @@
 package vn.iostrar.controllers.manager;
 
-import com.example.DAO.UserDaoImpl;
-import com.example.Model.UserModel;
-import com.example.Service.IUserService;
-import com.example.Service.UserService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import vn.iostrar.models.UserModel;
+import vn.iostrar.services.IUserService;
+import vn.iostrar.services.impl.UserService;
 
 import java.io.IOException;
 
